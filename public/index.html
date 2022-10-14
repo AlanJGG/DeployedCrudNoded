@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jugadores de futbol</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Jugadores de futbol</h1>
+    <input type="button" action="/obtenerJugador" value="Consultar jugadores">
+    <br>
+    <br>
+    <br>
+
+    <form action="/agregarJugador" method="post">
+        <br>
+        <input class="input" type="number" min="1" max="200" name="id" placeholder="ID">
+        <br>
+        <br>
+        <input class="input" type="text" name="nombre" placeholder="nombre">
+        <br>
+        <br>
+        <input class="input" type="text" name="posicion" placeholder="posicion">
+        <br>
+        <br>
+        <input class="input" type="number" name="noJersey" placeholder="numero de jersey">
+        <br>
+        <br>
+        <input class="input" type="submit" value="Agregar Jugador">
+        <br>
+        <br>
+    </form>
+
+    <br>
+    <br>
+    <br>
+
+    <form action="/eliminarJugador" method="post">
+        
+        <input class="input" type="text" name="usuario" placeholder="Jugador a borrar">
+        <br>
+        <br>
+        <input class="input" type="submit" value="Eliminar Jugador">
+        <br>
+        <br>
+    </form>
+
+    <br>
+    <br>
+    <br>
+
+    <form action="/actualizarJugador" method="post">
+        <input class="input" type="text" name="name" placeholder="Nombre del jugador para editar el numero">
+        <br>
+        <br>
+        <input class="input" type="text" name="newNoJersey" placeholder="nuevo numero de jersey">
+        <br>
+        <br>
+        <input class="input" type="submit" value="Cambiar Jugador">
+        <br>
+        <br>
+    </form>
+
+</body>
+</html>
