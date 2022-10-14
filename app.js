@@ -8,11 +8,16 @@ var bodyParser= require('body-parser');
 
 var con= mysql.createConnection({
 
-    host: 'containers-us-west-69.railway.app',
+    /*host: 'containers-us-west-69.railway.app',
     user: 'root',
     password: 'LFH0vSkxzQPj3FEEolWq',
     database: 'railway',
-    port: '7995'
+    port: '7995'*/
+    host: 'localhost',
+    user: 'root',
+    password: 'n0m3l0',
+    database: 'footballplayers',
+    port: '3306'
 });
 
 con.connect();
@@ -36,7 +41,7 @@ app.post('/agregarJugador', (req, res)=>{
 
         if(err) return console.log("error");
 
-        return res.send('Registro exitoso');
+        return res.send('<a href="index.html">Inicio</a><br>Registro exitoso');
 
 
     }
@@ -45,7 +50,7 @@ app.post('/agregarJugador', (req, res)=>{
 });
 
 const PORT = process.env.PORT || 7995;
-app.listen(PORT, ()=>{
+app.listen(3001, ()=>{
 
     console.log("Servicio en el puerto", 7995);
 }
@@ -77,19 +82,21 @@ app.get('/obtenerJugador', (req, res)=>{
         respuesta.forEach(jgd =>{
             i++
             userHTML+=`
-            <table>
-            <tr><td>${i}</td><td>${jgd.nombre}</td>
-            <td>${jgd.posicion}</td></tr>
-            <td>${jgd.noJersey}</td></tr>
+            <tr><td>${jgd.id}</td>
+            <td>${jgd.nombre}</td>
+            <td>${jgd.posicion}</td>
+            <td>${jgd.noJersey}</td>
+            </tr>
             
             `
         })
 
-        return res.send(`<table>
+        return res.send(`<table border="1">
             <tr>
-                <th>ID: </th>
-                <th>Nombre: </th>
-                <th>Posicion: </th>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Posicion</th>
+                <th>Número de Jersey</th>
             </tr>
             ${userHTML}
             </table>`)

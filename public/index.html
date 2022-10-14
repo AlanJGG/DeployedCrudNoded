@@ -9,59 +9,53 @@
 </head>
 <body>
     <h1>Jugadores de futbol</h1>
-    <input type="button" action="/obtenerJugador" value="Consultar jugadores">
-    <br>
-    <br>
-    <br>
-
-    <form action="/agregarJugador" method="post">
-        <br>
-        <input class="input" type="number" min="1" max="200" name="id" placeholder="ID">
-        <br>
-        <br>
-        <input class="input" type="text" name="nombre" placeholder="nombre">
-        <br>
-        <br>
-        <input class="input" type="text" name="posicion" placeholder="posicion">
-        <br>
-        <br>
-        <input class="input" type="number" name="noJersey" placeholder="numero de jersey">
-        <br>
-        <br>
-        <input class="input" type="submit" value="Agregar Jugador">
-        <br>
-        <br>
-    </form>
-
-    <br>
-    <br>
-    <br>
-
-    <form action="/eliminarJugador" method="post">
+    <a href="/obtenerJugador">Consultar jugadores</a>
+    <div class="container">
+        <h2>Agrega un jugador</h2>
+        <form action="/agregarJugador" method="post">
+            <br>
+            <input class="input" type="number" min="1" max="200" name="id" placeholder="ID">
+            <br>
+            <br>
+            <input class="input" type="text" name="nombre" placeholder="Nombre">
+            <br>
+            <br>
+            <input class="input" type="text" name="posicion" placeholder="Posición">
+            <br>
+            <br>
+            <input class="input" type="number" name="noJersey" placeholder="Número de Jersey">
+            <br>
+            <br>
+            <input class="btn" type="submit" value="Agregar Jugador">
+            <br>
+            <br>
+        </form>
+    </div>
+    <div class="container">
+        <h2>Actualiza un jugador</h2>
+        <form action="/actualizarJugador" method="post">
+            <input class="input" type="text" name="name" placeholder="Nombre de jugador">
+            <br>
+            <br>
+            <input class="input" type="text" name="newNoJersey" placeholder="Nuevo no. de jersey">
+            <br>
+            <br>
+            <input class="btn" type="submit" value="Cambiar Jugador">
+            <br>
+            <br>
+        </form>
+    </div>
+    <div class="container">
+        <h2>Elimina un jugador</h2>
+        <form action="/eliminarJugador" method="post">
         
-        <input class="input" type="text" name="usuario" placeholder="Jugador a borrar">
-        <br>
-        <br>
-        <input class="input" type="submit" value="Eliminar Jugador">
-        <br>
-        <br>
-    </form>
-
-    <br>
-    <br>
-    <br>
-
-    <form action="/actualizarJugador" method="post">
-        <input class="input" type="text" name="name" placeholder="Nombre del jugador para editar el numero">
-        <br>
-        <br>
-        <input class="input" type="text" name="newNoJersey" placeholder="nuevo numero de jersey">
-        <br>
-        <br>
-        <input class="input" type="submit" value="Cambiar Jugador">
-        <br>
-        <br>
-    </form>
-
+            <input class="input" type="text" name="usuario" placeholder="Jugador a borrar">
+            <br>
+            <br>
+            <input class="btn" type="submit" value="Eliminar Jugador">
+            <br>
+            <br>
+        </form>
+    </div>
 </body>
 </html>
