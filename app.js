@@ -8,16 +8,17 @@ var bodyParser= require('body-parser');
 
 var con= mysql.createConnection({
 
-    /*host: 'containers-us-west-69.railway.app',
+    host: 'containers-us-west-69.railway.app',
     user: 'root',
     password: 'LFH0vSkxzQPj3FEEolWq',
     database: 'railway',
-    port: '7995'*/
+    port: '7995'
+    /*
     host: 'localhost',
     user: 'root',
     password: 'n0m3l0',
     database: 'footballplayers',
-    port: '3306'
+    port: '3306'*/
 });
 
 con.connect();
@@ -50,7 +51,7 @@ app.post('/agregarJugador', (req, res)=>{
 });
 
 const PORT = process.env.PORT || 7995;
-app.listen(3001, ()=>{
+app.listen(PORT, ()=>{
 
     console.log("Servicio en el puerto", 7995);
 }
